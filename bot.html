@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Botón +1 Google+ en Amp</title>
+<title>Botón Facebook Like y compatir en Amp</title>
 <meta content='width=device-width, initial-scale=1' name='viewport'>
 <style>
 iframe{border:0}
@@ -21,11 +21,19 @@ var users = getQueryVariable("user");
 </script>
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=309411502506314";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <script>
-document.write('<div class="g-plusone" data-annotation="inline" data-width="300" data-href="'+ users +'"></div>');
+document.write('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F'+ users +'%2F&tabs&width=300&height=75&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=130456330445366" width="300" height="75" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>  ');
 </script>
-<script src="https://apis.google.com/js/platform.js" async defer>
-  {lang: 'es'}
-</script>
+
 </body>
 </html>
